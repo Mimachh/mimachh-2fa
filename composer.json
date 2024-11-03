@@ -1,0 +1,29 @@
+{
+    "name": "mimachh/2fa",
+    "description": "Two Factor Authentication for Laravel Inertia Breeze",
+    "type": "library",
+    "minimum-stability": "stable",
+    "version": "0.0.1",
+    "require-dev": {
+        "laravel/breeze": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mimachh\\TwoFactor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Karl",
+            "email": "karl.mullr@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mimachh\\TwoFactor\\TwoFactorServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
