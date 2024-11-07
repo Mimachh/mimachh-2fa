@@ -21,6 +21,7 @@ class TwoFactorActions
         $user = User::where('email', $request->email)->first();
         
         if($user->hasTwoFactor()) {
+      
             if(isset($code)) {
                 $token = $this->getTwoFactorTokenByEmail($user);
                 if(!$token) {
@@ -49,9 +50,8 @@ class TwoFactorActions
             
             } else {
                 $token = $this->generateTwoFactorToken($user);
-
                 // send it by mail
-                
+                return $token->token;
                 throw new \Exception("Waiting for code" . $token);
             }     
         }

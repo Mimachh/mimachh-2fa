@@ -24,12 +24,18 @@ class TwoFactorController extends Controller
 
         try {
             $two = (new TwoFactorActions())->handle($request);
+            // dd($two);
+  
+            return back()->with(['status' => json_encode(['token' => $two])])->withInput();
+
         } catch (ValidationException $e) {
             // Renvoyer l'erreur d'authentification à la vue avec les anciennes valeurs
             return back()->withErrors($e->errors())->withInput();
         } catch (\Exception $e) {
-            // Gérer d'autres erreurs éventuelles
-            return back()->with(['message' => $e->getMessage()])->withInput();
+            if($e->getMessage() == "Token not found" || $e->getMessage() == "Invalid code" || $e->getMessage() == "Token expired") {
+                return back()->with(['status' => json_encode($e->getMessage())])->withInput();
+            }
+            return back()->with(['status' => json_encode($e->getMessage())])->withInput();
         }
 
        
