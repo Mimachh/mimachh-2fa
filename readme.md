@@ -25,3 +25,8 @@ pour importer les composants TSX :  php artisan vendor:publish --tag=2fa-assets
 
 // TODO: il me restera à créer la vue
 // TODO: il me restera à faire un job pour supprimer les token expirés. Une fois par jour probablement.
+
+
+Pour utiliser la modal il faut zustand...donc le mettre en facultatif
+
+Mettre en require shadcn / zustand / inertia / react
