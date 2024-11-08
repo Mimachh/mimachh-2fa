@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\Mimachh\TwoFactor\Mail;
+namespace Mimachh\TwoFactor\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

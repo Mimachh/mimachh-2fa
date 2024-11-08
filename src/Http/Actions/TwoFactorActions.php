@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Mimachh\TwoFactor\Models\TwoFactorToken;
 use Mimachh\TwoFactor\Models\TwoFactorConfirmation;
-use Vendor\Mimachh\TwoFactor\Mail\SendTwoFactor;
+use Mimachh\TwoFactor\Mail\SendTwoFactor;
 
 class TwoFactorActions
 {

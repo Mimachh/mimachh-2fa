@@ -19,6 +19,10 @@ class TwoFactorServiceProvider extends ServiceProvider
             __DIR__ . '/./resources/js/Components/auth' => resource_path('js/Components/mimachh/2fa'),
             __DIR__ . '/./resources/js/hooks' => resource_path('js/hooks'),
         ], '2fa-assets');
+
+        $this->publishes([
+            __DIR__ . '/./resources/mail/mimachh' => resource_path('views/mail/mimachh'),
+        ], '2fa-mail');
     }
 
     public function register()
