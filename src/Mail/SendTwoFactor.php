@@ -19,7 +19,7 @@ class SendTwoFactor extends Mailable implements ShouldQueue
      * Create a new message instance.
      */
     public function __construct(
-        string $token
+        int $token
     )
     {
         $this->token = $token;

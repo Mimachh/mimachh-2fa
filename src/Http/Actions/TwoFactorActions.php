@@ -53,9 +53,10 @@ class TwoFactorActions
             } else {
                 $token = $this->generateTwoFactorToken($user);
                 // send it by mail
-                // return $token->token;
-                // throw new \Exception("Waiting for code" . $token);
                 Mail::to($user->email)->send(new SendTwoFactor($token->token));
+                return $token->token;
+                // throw new \Exception("Waiting for code" . $token);
+                
             }     
         }
     }
