@@ -5,8 +5,10 @@ namespace Mimachh\TwoFactor\Http\Actions;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Mimachh\TwoFactor\Models\TwoFactorToken;
 use Mimachh\TwoFactor\Models\TwoFactorConfirmation;
+use Vendor\Mimachh\TwoFactor\Mail\SendTwoFactor;
 
 class TwoFactorActions
 {
@@ -51,8 +53,9 @@ class TwoFactorActions
             } else {
                 $token = $this->generateTwoFactorToken($user);
                 // send it by mail
-                return $token->token;
-                throw new \Exception("Waiting for code" . $token);
+                // return $token->token;
+                // throw new \Exception("Waiting for code" . $token);
+                Mail::to($user->email)->send(new SendTwoFactor($token->token));
             }     
         }
     }
