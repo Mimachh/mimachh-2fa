@@ -50,6 +50,8 @@ class TwoFactorActions
                     'id' => $token->token
                 ]);   
             
+                return ['message' => 'OK'];
+                
             } else {
                 $token = $this->generateTwoFactorToken($user);
                 // send it by mail

@@ -26,6 +26,11 @@ class TwoFactorController extends Controller
             $two = (new TwoFactorActions())->handle($request);
             // dd($two);
   
+            if(isset($two["message"]) && $two['message'] == 'OK') {
+                $request->authenticate();
+                $request->session()->regenerate();
+                return redirect()->intended(route('dashboard', absolute: false));
+            }
             return back()->with(['status' => json_encode(['token' => $two])])->withInput();
 
         } catch (ValidationException $e) {
