@@ -8,7 +8,10 @@ use App\Http\Requests\Auth\LoginRequest;
 use Mimachh\TwoFactor\Http\Actions\TwoFactorActions;
 use Illuminate\Validation\ValidationException;
 
-class TwoFactorPublicController extends Controller
+/** 
+ * This controller handles the two factor authentication after publishing. If you no need to publish the controller. You will use the default TwoFactorController.
+ */
+class TwoFactorController extends Controller
 {
 
     /**
