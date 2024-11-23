@@ -23,6 +23,11 @@ class TwoFactorServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . '/./resources/mail/mimachh' => resource_path('views/mail/mimachh'),
         ], '2fa-mail');
+
+        // je publie le controller pour que l'utilisateur puisse le modifier
+        $this->publishes([
+            __DIR__ . '/./Http/Controllers' => app_path('Http/Controllers'),
+        ], '2fa-controllers');
     }
 
     public function register()
