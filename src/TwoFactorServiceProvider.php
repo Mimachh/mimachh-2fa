@@ -26,7 +26,7 @@ class TwoFactorServiceProvider extends ServiceProvider
 
         // je publie le controller pour que l'utilisateur puisse le modifier
         $this->publishes([
-            __DIR__ . '/./Http/Controllers' => app_path('Http/Controllers'),
+            __DIR__ . '/./Http/Controllers/TwoFactorPublicController.php' => app_path('Http/Controllers/Mimachh/TwoFactorController.php'),
         ], '2fa-controllers');
     }
 

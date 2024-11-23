@@ -61,3 +61,6 @@ php artisan vendor:publish --tag=2fa-mail
 ```
 
 Now email will work.
+
+### Controller
+If you need to have more control about the controller. You can publish it and customize it according to your needs.

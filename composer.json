@@ -3,7 +3,7 @@
     "description": "Two Factor Authentication for Laravel Inertia Breeze",
     "type": "library",
     "minimum-stability": "stable",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "require-dev": {
         "laravel/breeze": "^2.2"
     },

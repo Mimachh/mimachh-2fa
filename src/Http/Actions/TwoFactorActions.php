@@ -61,6 +61,8 @@ class TwoFactorActions
                 
             }     
         }
+
+        return false;
     }
 
 
